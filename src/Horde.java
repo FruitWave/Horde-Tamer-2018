@@ -105,7 +105,7 @@ public class Horde extends GameObject {
 				temp = null;
 			}
 			if (temp != null) {
-
+				/* HOW DID THIS SCREW EVERYTHING UP AGAIN */
 				if ((temp.y > y) && (temp.y < (y + height))) {
 					// if bullet's y is anywhere where it can hit the horde without moving it's y
 					// i dont know how to do complex ?/: variable functions, so I'm just going to do
@@ -115,12 +115,16 @@ public class Horde extends GameObject {
 					updateall();
 				}
 
-			} 
+			} else {
+				updateall();
+			}
+		} else {
+			updateall();
 		}
 	}
 
 	private void evasiveAction(boolean theDodgeTypeIsUp) {
-		y += theDodgeTypeIsUp ? -transpey * 10 : transpey * 10;
+		y += theDodgeTypeIsUp ? (-transpey * height) - 1 : (transpey * height) + 1;
 		System.out.println("Dodging. Going upwards: " + theDodgeTypeIsUp);
 	}
 
