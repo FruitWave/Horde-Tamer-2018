@@ -701,8 +701,6 @@ public class Sketch extends JPanel implements ActionListener, KeyListener {
 		flynn.isAlive = true;
 		// paused = false;
 		flynnroomnumber = 0;
-		cheatsBasicAccessGranted = false;
-		cheatsAdminAccessGranted = false;
 		if (gamesongPlayed == false) {
 			themeStopper(true);
 		}

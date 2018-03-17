@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Bullet extends GameObject {
 	int speed;
-	
+	int roomNumber;
 	boolean isGoingRight = true;
 	Color darkred = new Color(148, 22, 10);
 	int flyspeed;
@@ -12,7 +12,7 @@ public class Bullet extends GameObject {
 	public Bullet(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		speed = 7;
-		
+
 	}
 
 	public void update() {
@@ -25,6 +25,11 @@ public class Bullet extends GameObject {
 			x += flyspeed;
 		}
 
+		if (x >= Runner.width) {
+			isAlive = false;
+		} else if (x <= 0) {
+			isAlive = false;
+		}
 	}
 
 	public void draw(Graphics pvd) {
