@@ -104,14 +104,18 @@ public class Horde extends GameObject {
 			if (!temp.isAlive) {
 				temp = null;
 			}
-			if ((temp.y > y) && (temp.y < (y + height))) {
-				// if bullet's y is anywhere where it can hit the horde without moving it's y
-				// i dont know how to do complex ?/: variable functions, so I'm just going to do
-				// some longer code instead
-				evasiveAction(masterDodge);
-			}
-		} else {
-			updateall();
+			if (temp != null) {
+
+				if ((temp.y > y) && (temp.y < (y + height))) {
+					// if bullet's y is anywhere where it can hit the horde without moving it's y
+					// i dont know how to do complex ?/: variable functions, so I'm just going to do
+					// some longer code instead
+					evasiveAction(masterDodge);
+				} else {
+					updateall();
+				}
+
+			} 
 		}
 	}
 
